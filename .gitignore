@@ -1,0 +1,14 @@
+config/local
+dist/assets/
+dist/bundle.js
+dist/*
+dev/*
+styleguide
+node_modules
+npm-debug.log
+.DS_Store
+.tern-port
+.idea
+.editor-config
+package-lock.json
+yarn-error.log
