@@ -1,6 +1,7 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    project: './tsconfig.json',
     ecmaFeatures: {
       jsx: true,
     },
@@ -12,10 +13,10 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   extends: [
-    'eslint:recommended',
+    'airbnb-typescript',
     'plugin:react/recommended',
-    'plugin:jest/recommended',
-    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint',
   ],
   env: {
     browser: true,
@@ -23,6 +24,7 @@ module.exports = {
     jest: true,
   },
   rules: {
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     'prettier/prettier': [
       'error',
       {
@@ -36,6 +38,15 @@ module.exports = {
         ignore: ['context', 'tracking'],
       },
     ],
+    'import/prefer-default-export': 'off',
+    'import/no-named-as-default': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/jsx-boolean-value': 'off',
+    'react/prop-types': 'off',
+    'react/no-unescaped-entities': 'off',
+    'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-wrap-multilines': 'off',
+    'react/destructuring-assignment': 'off'
   },
   overrides: [
     {

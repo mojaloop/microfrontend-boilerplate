@@ -13,6 +13,7 @@ export const NavButton: FC<NavButtonProps> = ({ link, onClick, children }) => {
     <button
       className={`nav-button ${active ? 'nav-button--active' : ''}`}
       onClick={() => onClick(link)}
+      type="button"
     >
       {children}
     </button>
