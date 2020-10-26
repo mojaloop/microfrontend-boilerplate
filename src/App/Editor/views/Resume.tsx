@@ -5,7 +5,7 @@ import { State } from 'store/types';
 import './Resume.css';
 
 const Resume: FC<unknown> = () => {
-  const { name, lastname, address } = useSelector((state: State) => state.subApp.editor);
+  const { name, lastname, address } = useSelector((state: State) => state.editor);
   return (
     <div>
       <TextField className="resume__field" size="s" value={name} placeholder="Name" disabled />

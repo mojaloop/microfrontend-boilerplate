@@ -4,9 +4,7 @@ import { EditorState } from 'App/Editor/types';
 
 export interface State {
   router: RouterState;
-  subApp: {
-    editor: EditorState;
-  };
+  editor: EditorState;
 }
 export type PartialState = Partial<State>;
 

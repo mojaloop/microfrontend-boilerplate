@@ -47,12 +47,12 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.(ts|js)x?$/,
-        use: 'eslint-loader',
-        exclude: [/node_modules/],
-      },
+      // {
+      //   enforce: 'pre',
+      //   test: /\.(ts|js)x?$/,
+      //   use: 'eslint-loader',
+      //   exclude: [/node_modules/],
+      // },
       {
         test: /\.(ts|js)x?$/,
         use: 'ts-loader',

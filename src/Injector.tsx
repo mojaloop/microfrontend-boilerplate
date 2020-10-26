@@ -1,7 +1,9 @@
 import React, { FC } from 'react';
-import { useReducerLoader } from 'store/hooks';
+import { Provider } from 'react-redux';
+import { combineReducers } from 'redux';
+import { useReducerLoader } from '@modusbox/modusbox-ui-components/dist/redux/hooks';
 import { App } from './App';
-import reducer from './App/reducer';
+import { reducers } from './App/reducer';
 import sagas from './App/sagas';
 
 interface AppWithStoreInjectorProps {
@@ -9,13 +11,17 @@ interface AppWithStoreInjectorProps {
 }
 
 const AppWithStoreInjector: FC<AppWithStoreInjectorProps> = ({ token }) => {
-  let isReducerLoaded = false;
-  try {
-    isReducerLoaded = useReducerLoader('subApp', reducer, sagas);
-  } catch (e) {
-    console.log(e);
+  const store = useReducerLoader(combineReducers(reducers), sagas);
+
+  if (store === false) {
+    return <div>error while loading reducer / sagas</div>;
   }
-  return isReducerLoaded ? <App token={token} /> : <div>error while loading reducer / sagas</div>;
+
+  return (
+    <Provider store={store}>
+      <App token={token} />
+    </Provider>
+  );
 };
 
 export default AppWithStoreInjector;

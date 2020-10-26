@@ -5,7 +5,7 @@ import { State } from 'store/types';
 import './Form.css';
 
 const Data: FC<unknown> = () => {
-  const { submitData, submitError } = useSelector((state: State) => state.subApp.editor);
+  const { submitData, submitError } = useSelector((state: State) => state.editor);
   if (submitData) {
     return <ContentReader data={submitData} />;
   }
