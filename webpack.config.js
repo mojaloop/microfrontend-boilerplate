@@ -1,12 +1,17 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { ModuleFederationPlugin } = require('webpack').container;
+const webpack = require('webpack');
 const path = require('path');
 const deps = require('./package.json').dependencies;
+const { HotModuleReplacementPlugin } = webpack;
+const { ModuleFederationPlugin } = webpack.container;
+
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: './src/index',
   devtool: 'cheap-module-source-map',
   devServer: {
+
     disableHostCheck: true,
     // Enable gzip compression of generated files.
     compress: false,
@@ -55,8 +60,23 @@ module.exports = {
       },
       {
         test: /\.(ts|js)x?$/,
-        use: 'ts-loader',
         exclude: [/node_modules/],
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              plugins: [
+                require.resolve("@babel/plugin-proposal-class-properties"),
+                require.resolve("@babel/plugin-proposal-object-rest-spread"),
+                require.resolve("babel-plugin-syntax-async-functions"),
+                require.resolve("@babel/plugin-transform-runtime"),
+              ].filter(Boolean),
+            }
+          },
+          {
+            loader: 'ts-loader',
+          },
+        ]
       },
       {
         test: /\.css$/i,
@@ -70,6 +90,9 @@ module.exports = {
     ],
   },
   plugins: [
+    // ... other plugins
+    //isDevelopment && new HotModuleReplacementPlugin(),
+    //isDevelopment && new ReactRefreshWebpackPlugin(),
     new ModuleFederationPlugin({
       name: 'app',
       library: { type: 'var', name: 'app' },
@@ -92,5 +115,5 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
-  ],
+  ].filter(Boolean),
 };
