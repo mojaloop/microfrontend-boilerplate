@@ -11,7 +11,6 @@ module.exports = {
   entry: './src/index',
   devtool: 'cheap-module-source-map',
   devServer: {
-
     disableHostCheck: true,
     // Enable gzip compression of generated files.
     compress: false,
@@ -66,17 +65,17 @@ module.exports = {
             loader: 'babel-loader',
             options: {
               plugins: [
-                require.resolve("@babel/plugin-proposal-class-properties"),
-                require.resolve("@babel/plugin-proposal-object-rest-spread"),
-                require.resolve("babel-plugin-syntax-async-functions"),
-                require.resolve("@babel/plugin-transform-runtime"),
+                require.resolve('@babel/plugin-proposal-class-properties'),
+                require.resolve('@babel/plugin-proposal-object-rest-spread'),
+                require.resolve('babel-plugin-syntax-async-functions'),
+                require.resolve('@babel/plugin-transform-runtime'),
               ].filter(Boolean),
-            }
+            },
           },
           {
             loader: 'ts-loader',
           },
-        ]
+        ],
       },
       {
         test: /\.css$/i,
@@ -91,8 +90,6 @@ module.exports = {
   },
   plugins: [
     // ... other plugins
-    //isDevelopment && new HotModuleReplacementPlugin(),
-    //isDevelopment && new ReactRefreshWebpackPlugin(),
     new ModuleFederationPlugin({
       name: 'app',
       library: { type: 'var', name: 'app' },
