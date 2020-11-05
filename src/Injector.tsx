@@ -13,7 +13,7 @@ interface AppWithStoreInjectorProps {
 const AppWithStoreInjector: FC<AppWithStoreInjectorProps> = ({ token }) => {
   const store = useReducerLoader(combineReducers(reducers), sagas);
 
-  if (store === false) {
+  if (!store) {
     return <div>error while loading reducer / sagas</div>;
   }
 
