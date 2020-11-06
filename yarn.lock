@@ -1063,10 +1063,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
-"@modusbox/modusbox-ui-components@2.0.0-7":
-  version "2.0.0-7"
-  resolved "https://registry.yarnpkg.com/@modusbox/modusbox-ui-components/-/modusbox-ui-components-2.0.0-7.tgz#756a639e270fe72ece210b8e6fb347486b303691"
-  integrity sha512-XsKs7TkE77eEkoLkXaRmpFZznd4lhX28CDVncKXU/t3+aOsjyFzK+KA6ppdp8C2I1+1/SqFzlanIXYwDYaYTbw==
+"@modusbox/modusbox-ui-components@2.0.0-8":
+  version "2.0.0-8"
+  resolved "https://registry.yarnpkg.com/@modusbox/modusbox-ui-components/-/modusbox-ui-components-2.0.0-8.tgz#3d75451f70a6a623d8651c3c6e3a11384e3986c9"
+  integrity sha512-FGpswt26WcnXo1q1oBKpSubxQuS0avfVGXuwsFgDWlNUqMYmEwfAVsNsqIDxLbYKabaBVCtPQgJkVQlcl3Urxw==
   dependencies:
     "@babel/cli" "^7.0.0"
     "@babel/core" "^7.8.7"
@@ -1076,6 +1076,7 @@
     "@babel/preset-env" "^7.8.7"
     "@babel/preset-react" "^7.0.0"
     "@babel/preset-typescript" "^7.10.4"
+    "@redux-saga/types" "^1.1.0"
     "@types/lodash" "^4.14.161"
     babel-core "^7.0.0-bridge"
     babel-eslint "^9.0.0"
@@ -1088,6 +1089,7 @@
     lodash "^4.12.0"
     mini-css-extract-plugin "^0.9.0"
     moment ">= 2.6.0"
+    object-hash "^2.0.3"
     prop-types "^15.6.1"
     rc-notification "^3.0.0"
     react "16.13.1"
