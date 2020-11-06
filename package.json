@@ -22,7 +22,7 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.9.1",
     "@babel/preset-typescript": "^7.10.4",
-    "@modusbox/modusbox-ui-components": "2.0.0-7",
+    "@modusbox/modusbox-ui-components": "2.0.0-8",
     "@reduxjs/toolkit": "^1.4.0",
     "@types/classnames": "^2.2.10",
     "@types/history": "^4.7.7",
