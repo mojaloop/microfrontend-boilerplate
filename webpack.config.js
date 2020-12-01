@@ -96,6 +96,7 @@ module.exports = {
       filename: 'app.js',
       exposes: {
         './App': './src/Injector',
+        './Title': './src/components/Title',
       },
       shared: [
         'react',
