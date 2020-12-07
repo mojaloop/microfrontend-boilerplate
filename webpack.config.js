@@ -86,6 +86,10 @@ module.exports = {
           'css-loader',
         ],
       },
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
+      },
     ],
   },
   plugins: [
