@@ -5,24 +5,6 @@ import { Title, Tabs, TabList, Tab } from 'components';
 import Editor from './Editor';
 import { useBasePath } from './hooks';
 
-interface AppProps {
-  token?: string;
-}
-
-const App: FC<AppProps> = ({ token = '' }) => {
-  const history = useHistory();
-  const { pathname } = useLocation();
-  const basePath = useBasePath();
-
-  return (
-    <>
-      <Welcome basePath={basePath} />
-      <Navigator onTabClick={history.push} basePath={basePath} pathname={pathname} />
-      <Editor basePath={basePath} token={token} />
-    </>
-  );
-};
-
 interface WelcomeProps {
   basePath: string;
 }
@@ -67,6 +49,24 @@ const Navigator: FC<TabProps> = ({ pathname, basePath, onTabClick }) => {
         </Tabs>
       </div>
     </div>
+  );
+};
+
+interface AppProps {
+  token?: string;
+}
+
+const App: FC<AppProps> = ({ token = '' }) => {
+  const history = useHistory();
+  const { pathname } = useLocation();
+  const basePath = useBasePath();
+
+  return (
+    <>
+      <Welcome basePath={basePath} />
+      <Navigator onTabClick={history.push} basePath={basePath} pathname={pathname} />
+      <Editor basePath={basePath} token={token} />
+    </>
   );
 };
 
