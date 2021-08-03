@@ -85,8 +85,12 @@ module.exports = {
           // Translates CSS into CommonJS
           'css-loader',
           // SCSS
-          'sass-loader'
+          'sass-loader',
         ],
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
       },
     ],
   },
