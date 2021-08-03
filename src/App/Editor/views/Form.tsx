@@ -11,6 +11,7 @@ interface FormProps {
 }
 const NameForm: FC<FormProps> = ({ token = '' }) => {
   const dispatch = useDispatch();
+
   const editor = useSelector((state: State) => state.editor);
 
   const { name, lastname, address, submitPending } = editor;
