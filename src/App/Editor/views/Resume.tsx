@@ -8,17 +8,17 @@ const Resume: FC<unknown> = () => {
   const { name, lastname, address } = useSelector((state: State) => state.editor);
   return (
     <div>
-      <TextField className="resume__field" size="s" value={name} placeholder="Name" disabled />
+      <TextField className="resume__field" size="small" value={name} placeholder="Name" disabled />
       <TextField
         className="resume__field"
-        size="s"
+        size="small"
         value={lastname}
         placeholder="Lastname"
         disabled
       />
       <TextField
         className="resume__field"
-        size="s"
+        size="small"
         value={address}
         placeholder="Address"
         disabled

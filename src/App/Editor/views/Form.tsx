@@ -18,28 +18,28 @@ const NameForm: FC<FormProps> = ({ token = '' }) => {
     <div>
       <TextField
         className="form__field"
-        size="s"
+        size="small"
         value={name}
         placeholder="Name"
         onChange={(value: string) => dispatch(actions.changeEditorName(value))}
       />
       <TextField
         className="form__field"
-        size="s"
+        size="small"
         value={lastname}
         placeholder="Lastname"
         onChange={(value: string) => dispatch(actions.changeEditorLastname(value))}
       />
       <TextField
         className="form__field"
-        size="s"
+        size="small"
         value={address}
         placeholder="Address"
         onChange={(value: string) => dispatch(actions.changeEditorAddress(value))}
       />
       <Button
         label="Submit"
-        size="s"
+        size="small"
         onClick={() => dispatch(actions.submitEditorForm(token))}
         disabled={submitPending}
         pending={submitPending}

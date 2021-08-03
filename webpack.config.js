@@ -72,9 +72,9 @@ module.exports = {
               ].filter(Boolean),
             },
           },
-          {
-            loader: 'ts-loader',
-          },
+          // {
+          //   loader: 'ts-loader',
+          // },
         ],
       },
       {
@@ -111,7 +111,7 @@ module.exports = {
         'redux-saga',
         'history',
         '@reduxjs/toolkit',
-        '@modusbox/modusbox-ui-components',
+        '@modusbox/react-components',
       ],
     }),
     new HtmlWebpackPlugin({
