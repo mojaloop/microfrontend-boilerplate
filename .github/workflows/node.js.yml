@@ -19,7 +19,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [15.x]
 
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -39,7 +39,7 @@ jobs:
         cache-name: cache-node-modules
       with:
         # npm cache files are stored in `~/.npm` on Linux/macOS
-        path: ~/.yarn
+        path: '**/node_modules'
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-build-${{ env.cache-name }}-
