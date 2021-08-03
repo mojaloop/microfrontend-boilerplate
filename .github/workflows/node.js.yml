@@ -47,6 +47,7 @@ jobs:
 
     - run: yarn install --frozen-lockfile
     - run: yarn lint
+    - run: yarn test
     - run: yarn build
 #    - name: Slack Notification
 #      uses: rtCamp/action-slack-notify@v2.0.2
