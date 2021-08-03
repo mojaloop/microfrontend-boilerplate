@@ -32,7 +32,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: yarn config set cache-folder .yarn
     - name: Cache node modules
       uses: actions/cache@v2
       env:
