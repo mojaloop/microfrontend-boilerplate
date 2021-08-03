@@ -1,0 +1,111 @@
+// This section refers to the react-components override
+@use '@modusbox/react-components/lib/index' with (
+  $primary: rgb(181, 7, 250),
+  $border-color--default: #ccc,
+  $border-width--default: 1px,
+  $border-width--themed: 1px,
+  // flags
+  $themed-border-top: true,
+  $themed-border-bottom: true,
+  $themed-border-left: true,
+  $themed-border-right: true,
+);
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+  font-family: Fira Sans, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #333;
+  position: relative;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #00a2df;
+}
+
+a:hover {
+  color: #48c1ed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #3a3b3c;
+  font-style: normal;
+  font-family: Fira Sans, sans-serif;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: -0.05rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: -0.03rem;
+}
+
+h3 {
+  font-size: 2rem;
+  letter-spacing: -0.025rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+  letter-spacing: -0.02rem;
+}
+
+h5 {
+  font-size: 1.6rem;
+  letter-spacing: -0.02rem;
+}
+
+h6 {
+  font-size: 1.2rem;
+  letter-spacing: 0;
+}
+
+p {
+  margin: 20px 0;
+  font-size: 1.4rem;
+  letter-spacing: 0;
+  font-family: Fira Sans, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

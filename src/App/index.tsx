@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Title, Tabs, Tab } from 'components';
-
 import Editor from './Editor';
 import { useBasePath } from './hooks';
+import './index.scss';
 
 interface WelcomeProps {
   basePath: string;

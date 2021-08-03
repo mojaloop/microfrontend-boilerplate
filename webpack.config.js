@@ -78,7 +78,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/i,
+        test: /\.(s)?css$/i,
         use: [
           // Creates `style` nodes from JS strings
           'style-loader',
@@ -87,10 +87,6 @@ module.exports = {
           // SCSS
           'sass-loader'
         ],
-      },
-      {
-        test: /\.svg$/,
-        loader: 'svg-sprite-loader',
       },
     ],
   },
