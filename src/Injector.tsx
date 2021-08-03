@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers } from 'redux';
 import useChildStore from './hooks/useChildStore';
-import { App } from './App';
+import App from './App';
 import { reducers } from './App/reducer';
 import sagas from './App/sagas';
 
