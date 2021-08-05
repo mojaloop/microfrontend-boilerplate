@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { MessageBox } from 'components';
 import { State } from 'store/types';
-import './Form.css';
 
 const Data: FC<unknown> = () => {
   const { submitData, submitError } = useSelector((state: State) => state.editor);
