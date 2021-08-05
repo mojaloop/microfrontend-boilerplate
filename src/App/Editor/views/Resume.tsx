@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { TextField } from 'components';
 import { State } from 'store/types';
-import './Resume.css';
+import './Resume.scss';
 
 const Resume: FC<unknown> = () => {
   const { name, lastname, address } = useSelector((state: State) => state.editor);
