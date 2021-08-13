@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Icon, Row, TextField } from 'components';
 // @ts-ignore
@@ -10,7 +10,7 @@ import './Form.scss';
 interface FormProps {
   token?: string;
 }
-const NameForm: FC<FormProps> = ({ token = '' }) => {
+function NameForm({ token = '' }: FormProps) {
   const dispatch = useDispatch();
 
   const editor = useSelector((state: State) => state.editor);
@@ -50,6 +50,6 @@ const NameForm: FC<FormProps> = ({ token = '' }) => {
       />
     </Row>
   );
-};
+}
 
 export default NameForm;

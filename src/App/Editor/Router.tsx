@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Data from './views/Data';
 import Form from './views/Form';
@@ -9,7 +9,7 @@ interface EditorProps {
   token?: string;
 }
 
-const Editor: FC<EditorProps> = ({ token, basePath = '' }) => {
+function Editor({ token, basePath = '' }: EditorProps) {
   return (
     <Switch>
       <Route path={`${basePath}/form`}>
@@ -24,6 +24,6 @@ const Editor: FC<EditorProps> = ({ token, basePath = '' }) => {
       </Route>
     </Switch>
   );
-};
+}
 
 export default Editor;
