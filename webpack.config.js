@@ -1,11 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
-const deps = require('./package.json').dependencies;
-const { HotModuleReplacementPlugin } = webpack;
-const { ModuleFederationPlugin } = webpack.container;
 
-const isDevelopment = process.env.NODE_ENV !== 'production';
+const { ModuleFederationPlugin } = webpack.container;
 
 module.exports = {
   entry: './src/index',
@@ -72,10 +70,14 @@ module.exports = {
               ].filter(Boolean),
             },
           },
-          // {
-          //   loader: 'ts-loader',
-          // },
         ],
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        options: {
+          transpileOnly: true,
+        },
       },
       {
         test: /\.(s)?css$/i,
@@ -100,7 +102,11 @@ module.exports = {
     ],
   },
   plugins: [
-    // ... other plugins
+    new ForkTsCheckerWebpackPlugin({
+      eslint: {
+        files: './src/**/*.{ts,tsx,js,jsx}',
+      },
+    }),
     new ModuleFederationPlugin({
       name: 'app',
       library: { type: 'var', name: 'app' },
