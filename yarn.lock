@@ -1243,6 +1243,25 @@
     date-fns "^2.21.3"
     lodash "^4.17.21"
 
+"@modusbox/redux-utils@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@modusbox/redux-utils/-/redux-utils-0.0.7.tgz#cc0660d8cfdc314cf44830fbe56a2888775a9624"
+  integrity sha512-dP5IKlBpKubiyAmHZr9MsjQNpcAFPSrC06PecLQIPZx7noSksbDaOPrrSsN/fN6WQ+e4VEuA1nUsrr+fYW7Fjw==
+  dependencies:
+    "@modusbox/ts-utils" "^0.0.3"
+    axios "^0.21.1"
+    lodash "^4.17.21"
+    object-hash "^2.1.1"
+    redux "^4.0.5"
+    redux-saga "^1.1.3"
+
+"@modusbox/ts-utils@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@modusbox/ts-utils/-/ts-utils-0.0.3.tgz#8dd31001a3cb5eed08ff1cc42b37cc5796675b25"
+  integrity sha512-VcxVMMMmTpccy59uMw3GCf/vLeohRbm7cswoSu4WwksEDmjt+nNu1mf1mHDzf1HrSXTQnN/dLRh/r7ZlOkNTXw==
+  dependencies:
+    lodash "^4.17.21"
+
 "@modusbox/ts-utils@^0.0.4":
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@modusbox/ts-utils/-/ts-utils-0.0.4.tgz#3f60f61066576cc07dff35adfc5a754d9cdc63f6"
@@ -2618,6 +2637,13 @@ axios@^0.20.0:
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.20.0.tgz#057ba30f04884694993a8cd07fa394cff11c50bd"
   integrity sha512-ANA4rr2BDcmmAQLOKft2fufrtuvlqR+cXNNinUmvfeSNCOF98PZL+7M/v1zIdGo7OLjEA9J2gXJL+j4zGsl0bA==
+  dependencies:
+    follow-redirects "^1.10.0"
+
+axios@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
   dependencies:
     follow-redirects "^1.10.0"
 
@@ -7473,7 +7499,7 @@ object-copy@^0.1.0:
     define-property "^0.2.5"
     kind-of "^3.0.3"
 
-object-hash@^2.0.3:
+object-hash@^2.0.3, object-hash@^2.1.1:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-2.2.0.tgz#5ad518581eefc443bd763472b8ff2e9c2c0d54a5"
   integrity sha512-gScRMn0bS5fH+IuwyIFgnh9zBdo4DV+6GhygmWM9HyNJSgS0hScp1f5vjtm7oIIOiT9trXrShAkLFSc2IqKNgw==
@@ -8514,6 +8540,13 @@ redux@^4.0.0, redux@^4.0.4, redux@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.1.0.tgz#eb049679f2f523c379f1aff345c8612f294c88d4"
   integrity sha512-uI2dQN43zqLWCt6B/BMGRMY6db7TTY4qeHHfGeKb3EOhmOKjU3KdWvNLJyqaHRksv/ErdNH7cFZWg9jXtewy4g==
+  dependencies:
+    "@babel/runtime" "^7.9.2"
+
+redux@^4.0.5:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/redux/-/redux-4.1.1.tgz#76f1c439bb42043f985fbd9bf21990e60bd67f47"
+  integrity sha512-hZQZdDEM25UY2P493kPYuKqviVwZ58lEmGQNeQ+gXa+U0gYPUBf7NKYazbe3m+bs/DzM/ahN12DbF+NG8i0CWw==
   dependencies:
     "@babel/runtime" "^7.9.2"
 
@@ -9982,10 +10015,15 @@ typescript-tuple@^2.2.1:
   dependencies:
     typescript-compare "^0.0.2"
 
-typescript@^3.2.1, typescript@^3.9.3, typescript@^3.9.7:
+typescript@^3.2.1, typescript@^3.9.3:
   version "3.9.10"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.10.tgz#70f3910ac7a51ed6bef79da7800690b19bf778b8"
   integrity sha512-w6fIxVE/H1PkLKcCPsFqKE7Kv7QUwhU8qQY2MueZXWx5cPZdwFupLgKK3vntcK98BtNHZtAF4LA/yl2a7k8R6Q==
+
+typescript@^4.3.5:
+  version "4.3.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.3.5.tgz#4d1c37cc16e893973c45a06886b7113234f119f4"
+  integrity sha512-DqQgihaQ9cUrskJo9kIyW/+g0Vxsk8cDtZ52a3NGh0YNTfpUSArXSohyUGnvbPazEPLu398C0UxmKSOrPumUzA==
 
 unbox-primitive@^1.0.1:
   version "1.0.1"
