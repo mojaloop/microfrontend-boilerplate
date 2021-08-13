@@ -4,9 +4,9 @@ import { all, put, takeLatest } from 'redux-saga/effects';
 import { SUBMIT_EDITOR_FORM } from './types';
 import { setSubmitError, setSubmitResponse } from './actions';
 
-function* submitFormSaga(action: PayloadAction<string>) {
+function* submitFormSaga(action: PayloadAction<string>): Generator {
   try {
-    const response = yield axios({
+    const response: any = yield axios({
       url: 'https://jsonplaceholder.typicode.com/posts',
       headers: {
         authentication: `bearer ${action.payload}`,
@@ -14,7 +14,7 @@ function* submitFormSaga(action: PayloadAction<string>) {
     });
     yield put(setSubmitResponse(response.data));
   } catch (e) {
-    yield put(setSubmitError(e.nessage));
+    yield put(setSubmitError(e.message));
   }
 }
 
