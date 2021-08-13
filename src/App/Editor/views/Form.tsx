@@ -4,7 +4,7 @@ import { Button, Icon, Row, TextField } from 'components';
 // @ts-ignore
 import WarnIcon from 'bootstrap-icons/icons/exclamation-diamond-fill.svg';
 import { State } from 'store/types';
-import * as actions from '../actions';
+import { actions } from '../slice';
 import './Form.scss';
 
 interface FormProps {

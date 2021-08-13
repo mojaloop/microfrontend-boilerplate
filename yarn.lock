@@ -1243,10 +1243,10 @@
     date-fns "^2.21.3"
     lodash "^4.17.21"
 
-"@modusbox/redux-utils@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@modusbox/redux-utils/-/redux-utils-0.0.7.tgz#cc0660d8cfdc314cf44830fbe56a2888775a9624"
-  integrity sha512-dP5IKlBpKubiyAmHZr9MsjQNpcAFPSrC06PecLQIPZx7noSksbDaOPrrSsN/fN6WQ+e4VEuA1nUsrr+fYW7Fjw==
+"@modusbox/redux-utils@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@modusbox/redux-utils/-/redux-utils-0.0.8.tgz#0e02d1ef47e26f409054557c8a2b210b6cead055"
+  integrity sha512-ozVcg4gizN4aYd5KX26M38nYxXNVBBp0zeQpos7RAxahrddt5TwmXhMcWeK6JjCtuqALItRjMmIYi0rmKvv4cw==
   dependencies:
     "@modusbox/ts-utils" "^0.0.3"
     axios "^0.21.1"
