@@ -1,9 +1,15 @@
-import React, { FC } from 'react';
+import React from 'react';
 import './Title.css';
 
-const Title: FC<{ size?: number }> = ({ children, size = 15 }) => (
-  <span className="title" style={{ fontSize: size }}>
-    {children}
-  </span>
-);
-export default Title;
+interface TitleProps {
+  size?: number;
+  children: React.ReactNode;
+}
+
+export default function Title({ children, size = 15 }: TitleProps) {
+  return (
+    <span className="title" style={{ fontSize: size }}>
+      {children}
+    </span>
+  );
+}

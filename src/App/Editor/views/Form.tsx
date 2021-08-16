@@ -1,16 +1,16 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Icon, Row, TextField } from 'components';
 // @ts-ignore
 import WarnIcon from 'bootstrap-icons/icons/exclamation-diamond-fill.svg';
 import { State } from 'store/types';
-import * as actions from '../actions';
+import { actions } from '../slice';
 import './Form.scss';
 
 interface FormProps {
   token?: string;
 }
-const NameForm: FC<FormProps> = ({ token = '' }) => {
+function NameForm({ token = '' }: FormProps) {
   const dispatch = useDispatch();
 
   const editor = useSelector((state: State) => state.editor);
@@ -19,7 +19,13 @@ const NameForm: FC<FormProps> = ({ token = '' }) => {
 
   return (
     <Row align="center left">
-      <Icon size={30} icon={<WarnIcon />} fill="#999" />
+      <div style={{ margin: '5px' }}>
+        <Icon
+          size={20}
+          icon={<WarnIcon />}
+          fill={getComputedStyle(document.documentElement).getPropertyValue('--color__primary')}
+        />
+      </div>
       <TextField
         className="form__field"
         size="small"
@@ -50,6 +56,6 @@ const NameForm: FC<FormProps> = ({ token = '' }) => {
       />
     </Row>
   );
-};
+}
 
 export default NameForm;

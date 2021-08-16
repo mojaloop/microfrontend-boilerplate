@@ -1,12 +1,14 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import './NavButton.css';
 
 interface NavButtonProps {
   link: string;
   onClick: (link: string) => void;
+  children: React.ReactNode;
 }
-export const NavButton: FC<NavButtonProps> = ({ link, onClick, children }) => {
+
+export default function NavButton({ link, onClick, children }: NavButtonProps) {
   const location = useLocation();
   const active = location.pathname.startsWith(link);
   return (
@@ -18,6 +20,4 @@ export const NavButton: FC<NavButtonProps> = ({ link, onClick, children }) => {
       {children}
     </button>
   );
-};
-
-export default NavButton;
+}

@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-import { Title, Tabs, Tab } from 'components';
+import { Heading, Tabs, Tab, Text } from 'components';
 import Editor from './Editor';
 import { useBasePath } from './hooks';
 import './index.scss';
@@ -9,16 +9,17 @@ interface WelcomeProps {
   basePath: string;
 }
 
-const Welcome: FC<WelcomeProps> = ({ basePath }) => (
-  <div style={{ padding: '10px' }}>
-    <Title>
-      <strong>Welcome!</strong>
-      <br />
-      App is mounted on <code>{basePath || '/'}</code> and will automatically redirect to{' '}
-      <code>{basePath}/form</code>
-    </Title>
-  </div>
-);
+function Welcome({ basePath }: WelcomeProps) {
+  return (
+    <div style={{ padding: '10px' }}>
+      <Heading size="4">Welcome!</Heading>
+      <Text>
+        App is mounted on <code>{basePath || '/'}</code> and will automatically redirect to{' '}
+        <code>{basePath}/form</code>
+      </Text>
+    </div>
+  );
+}
 
 interface TabProps {
   onTabClick: (link: string) => void;
@@ -26,7 +27,7 @@ interface TabProps {
   pathname: string;
 }
 
-const Navigator: FC<TabProps> = ({ pathname, basePath, onTabClick }) => {
+function Navigator({ pathname, basePath, onTabClick }: TabProps) {
   const views = ['form', 'resume', 'data'];
   const viewIndex = views.indexOf(pathname.replace(basePath, '').substring(1));
   const selected = viewIndex !== -1 ? viewIndex : undefined;
@@ -47,13 +48,13 @@ const Navigator: FC<TabProps> = ({ pathname, basePath, onTabClick }) => {
       </div>
     </div>
   );
-};
+}
 
 interface AppProps {
   token?: string;
 }
 
-const App: FC<AppProps> = ({ token = '' }) => {
+function App({ token = '' }: AppProps) {
   const history = useHistory();
   const { pathname } = useLocation();
   const basePath = useBasePath();
@@ -65,7 +66,7 @@ const App: FC<AppProps> = ({ token = '' }) => {
       <Editor basePath={basePath} token={token} />
     </>
   );
-};
+}
 
 export { App };
 export default App;

@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { PayloadAction } from '@reduxjs/toolkit';
 import { all, put, takeLatest } from 'redux-saga/effects';
-import { SUBMIT_EDITOR_FORM } from './types';
-import { setSubmitError, setSubmitResponse } from './actions';
+import { actions } from './slice';
 
 function* submitFormSaga(action: PayloadAction<string>): Generator {
   try {
@@ -12,14 +11,14 @@ function* submitFormSaga(action: PayloadAction<string>): Generator {
         authentication: `bearer ${action.payload}`,
       },
     });
-    yield put(setSubmitResponse(response.data));
+    yield put(actions.setSubmitResponse(response.data));
   } catch (e) {
-    yield put(setSubmitError(e.message));
+    yield put(actions.setSubmitError(e.message));
   }
 }
 
 export function* SubmitFormSaga(): Generator {
-  yield takeLatest(SUBMIT_EDITOR_FORM, submitFormSaga);
+  yield takeLatest(actions.submitEditorForm.type, submitFormSaga);
 }
 
 export default function* rootSaga(): Generator {

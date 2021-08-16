@@ -1,30 +1,34 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
-import { TextField } from 'components';
+import { Field, Text } from 'components';
 import { State } from 'store/types';
 import './Resume.scss';
 
-const Resume: FC<unknown> = () => {
+export default function Resume() {
   const { name, lastname, address } = useSelector((state: State) => state.editor);
   return (
     <div>
-      <TextField className="resume__field" size="small" value={name} placeholder="Name" disabled />
-      <TextField
-        className="resume__field"
-        size="small"
-        value={lastname}
-        placeholder="Lastname"
-        disabled
-      />
-      <TextField
-        className="resume__field"
-        size="small"
-        value={address}
-        placeholder="Address"
-        disabled
-      />
+      <Field className="resume__field" size="small" kind="dark">
+        {name || (
+          <Text light size="small">
+            name unset
+          </Text>
+        )}
+      </Field>
+      <Field className="resume__field" size="small" kind="dark">
+        {lastname || (
+          <Text light size="small">
+            lastname unset
+          </Text>
+        )}
+      </Field>
+      <Field className="resume__field" size="small" kind="dark">
+        {address || (
+          <Text light size="small">
+            address unset
+          </Text>
+        )}
+      </Field>
     </div>
   );
-};
-
-export default Resume;
+}

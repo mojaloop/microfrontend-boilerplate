@@ -14,6 +14,7 @@ It provides a basic module structure ready to be used, a webpack configuration t
  - `yarn lint` to lint the codebase
  - `yarn build` to produce the bundle(s)
  - `yarn serve` to run the production build locally
+ - `yarn test` to run the tests
 
 
 #### Structure
