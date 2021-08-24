@@ -1,20 +1,21 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
-import { combineReducers } from 'redux';
-import useChildStore from './hooks/useChildStore';
+import configureStore from './store';
 import App from './App';
-import { reducers } from './App/reducer';
-import sagas from './App/sagas';
+import { actions, AuthConfig } from './App/Config';
 
 interface AppWithStoreInjectorProps {
   token?: string;
+  authConfig?: AuthConfig;
 }
 
-const AppWithStoreInjector: FC<AppWithStoreInjectorProps> = ({ token }) => {
-  const store = useChildStore(combineReducers(reducers), sagas);
+const store = configureStore(null, {
+  isDevelopment: process.env.NODE_ENV === 'development',
+});
 
-  if (!store) {
-    return <div>error while loading reducer / sagas</div>;
+export default function AppWithStoreInjector({ token, authConfig }: AppWithStoreInjectorProps) {
+  if (authConfig) {
+    store.dispatch(actions.setConfig(authConfig));
   }
 
   return (
@@ -22,6 +23,4 @@ const AppWithStoreInjector: FC<AppWithStoreInjectorProps> = ({ token }) => {
       <App token={token} />
     </Provider>
   );
-};
-
-export default AppWithStoreInjector;
+}

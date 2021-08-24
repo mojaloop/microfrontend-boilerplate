@@ -18,7 +18,7 @@ interface StoreConfig {
  * @param config
  */
 export default function configure(
-  history: History,
+  history: History | null,
   config: StoreConfig = {
     isDevelopment: process.env.NODE_ENV === 'development',
   },
@@ -26,7 +26,12 @@ export default function configure(
   const sagaMiddleware = createSagaMiddleware({});
   const createReducer = getCreateReducer(history);
 
-  const middleware = [...getDefaultMiddleware(), routerMiddleware(history), sagaMiddleware];
+  const middleware = [...getDefaultMiddleware()];
+  if (history) {
+    middleware.push(routerMiddleware(history));
+  }
+  middleware.push(sagaMiddleware);
+
   const store = configureStore({
     reducer: createReducer(),
     middleware,

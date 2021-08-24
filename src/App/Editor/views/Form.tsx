@@ -48,11 +48,17 @@ function NameForm({ token = '' }: FormProps) {
         onChange={(value: string) => dispatch(actions.changeEditorAddress(value))}
       />
       <Button
-        label="Submit"
+        label="Submit Form"
         size="small"
         onClick={() => dispatch(actions.submitEditorForm(token))}
         disabled={formSubmit.pending}
         pending={formSubmit.pending}
+      />
+      <Button
+        label="Simluate unauthenticated request"
+        size="small"
+        kind="danger"
+        onClick={() => dispatch(actions.simulateUnauthenticatedRequest())}
       />
     </Row>
   );
