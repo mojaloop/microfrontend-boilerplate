@@ -113,7 +113,7 @@ module.exports = {
       filename: 'app.js',
       exposes: {
         './App': './src/Injector',
-        './Title': './src/components/Title',
+        './Menu': './src/Menu',
       },
       shared: [
         'react',

@@ -15,7 +15,7 @@ function NameForm({ token = '' }: FormProps) {
 
   const editor = useSelector((state: State) => state.editor);
 
-  const { name, lastname, address, submitPending } = editor;
+  const { name, lastname, address, formSubmit } = editor;
 
   return (
     <Row align="center left">
@@ -51,8 +51,8 @@ function NameForm({ token = '' }: FormProps) {
         label="Submit"
         size="small"
         onClick={() => dispatch(actions.submitEditorForm(token))}
-        disabled={submitPending}
-        pending={submitPending}
+        disabled={formSubmit.pending}
+        pending={formSubmit.pending}
       />
     </Row>
   );

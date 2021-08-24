@@ -1,15 +1,14 @@
-import axios from 'axios';
+import api from 'utils/api';
 import { PayloadAction } from '@reduxjs/toolkit';
-import { all, put, takeLatest } from 'redux-saga/effects';
+import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { actions } from './slice';
 
-function* submitFormSaga(action: PayloadAction<string>): Generator {
+function* submitFormSaga(
+  action: PayloadAction<string>,
+): Generator<unknown, void, ReturnType<typeof api.account.create>> {
   try {
-    const response: any = yield axios({
-      url: 'https://jsonplaceholder.typicode.com/posts',
-      headers: {
-        authentication: `bearer ${action.payload}`,
-      },
+    const response: ReturnType<typeof api.account.create> = yield call(api.account.create, {
+      token: action.payload,
     });
     yield put(actions.setSubmitResponse(response.data));
   } catch (e) {

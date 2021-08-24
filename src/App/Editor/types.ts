@@ -1,8 +1,14 @@
+import { RequestState } from '@modusbox/redux-utils/lib/reducers/request';
+
+export interface Account {
+  name: string;
+  lastname: string;
+  address: string;
+}
+
 export interface EditorState {
   name: string;
   lastname: string;
   address: string;
-  submitPending: boolean;
-  submitData?: any[];
-  submitError: null | string;
+  formSubmit: RequestState<Account>;
 }
