@@ -27,7 +27,7 @@
     "@babel/preset-react": "^7.9.1",
     "@babel/preset-typescript": "^7.10.4",
     "@modusbox/react-components": "^0.1.2-14",
-    "@modusbox/redux-utils": "^0.0.8",
+    "@modusbox/redux-utils": "^0.0.9",
     "@reduxjs/toolkit": "^1.4.0",
     "@svgr/webpack": "^5.5.0",
     "@testing-library/jest-dom": "^5.14.1",

@@ -4,12 +4,12 @@ import { MessageBox } from 'components';
 import { State } from 'store/types';
 
 export default function Data() {
-  const { submitData, submitError } = useSelector((state: State) => state.editor);
-  if (submitData) {
-    return <div>{JSON.stringify(submitData)}</div>;
+  const { formSubmit } = useSelector((state: State) => state.editor);
+  if (formSubmit.data) {
+    return <div>{JSON.stringify(formSubmit.data)}</div>;
   }
-  if (submitError) {
-    return <MessageBox kind="danger">{submitError}</MessageBox>;
+  if (formSubmit.error) {
+    return <MessageBox kind="danger">{formSubmit.error}</MessageBox>;
   }
   return <MessageBox>Nothing to display! Did you submit?</MessageBox>;
 }
