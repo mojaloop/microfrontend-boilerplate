@@ -14,6 +14,7 @@ function NameForm({ token = '' }: FormProps) {
   const dispatch = useDispatch();
 
   const editor = useSelector((state: State) => state.editor);
+  const counter = useSelector((state: State) => state.config.counter);
 
   const { name, lastname, address, formSubmit } = editor;
 
@@ -26,6 +27,7 @@ function NameForm({ token = '' }: FormProps) {
           fill={getComputedStyle(document.documentElement).getPropertyValue('--color__primary')}
         />
       </div>
+      <div>counter: {counter} </div>
       <TextField
         className="form__field"
         size="small"

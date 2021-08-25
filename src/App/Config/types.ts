@@ -5,4 +5,6 @@ export interface AuthConfig {
   isAuthEnabled: boolean;
 }
 
-export interface ConfigState extends AuthConfig {}
+export interface ConfigState extends AuthConfig {
+  counter: number;
+}
