@@ -1,14 +1,18 @@
 import React from 'react';
-import { Menu, MenuProps } from 'components';
+import { Menu } from 'components';
 import { useHistory, useLocation, useRouteMatch } from 'react-router-dom';
 
-export default function ExportMenu({ path, pathname, onChange }: Omit<MenuProps, 'children'>) {
+interface ExportMenuProps {
+  path: string;
+}
+
+export default function ExportMenu({ path }: ExportMenuProps) {
   return (
-    <Menu path={path} pathname={pathname} onChange={onChange}>
+    <>
       <Menu.Item path={`${path}/form`} label="Form" />
       <Menu.Item path={`${path}/resume`} label="Resume" />
       <Menu.Item path={`${path}/data`} label="Data" />
-    </Menu>
+    </>
   );
 }
 
@@ -16,11 +20,10 @@ export function AppMenu() {
   const match = useRouteMatch();
   const history = useHistory();
   const location = useLocation();
+  const path = match.url === '/' ? '' : match.url;
   return (
-    <ExportMenu
-      path={match.url === '/' ? '' : match.url}
-      pathname={location.pathname}
-      onChange={history.push}
-    />
+    <Menu path={path} pathname={location.pathname} onChange={history.push}>
+      <ExportMenu path={path} />
+    </Menu>
   );
 }

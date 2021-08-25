@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { MessageBox } from 'components';
-import { State } from 'store/types';
+import { State } from 'store';
 
 export default function Data() {
   const { formSubmit } = useSelector((state: State) => state.editor);

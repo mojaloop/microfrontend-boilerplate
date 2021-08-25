@@ -1,6 +1,7 @@
-import api from 'utils/api';
 import { PayloadAction } from '@reduxjs/toolkit';
 import { all, call, put, takeLatest, select } from 'redux-saga/effects';
+import api from 'utils/api';
+import { State } from 'store';
 import { actions } from './slice';
 
 function* submitFormSaga(
@@ -20,10 +21,9 @@ export function* SubmitFormSaga(): Generator {
   yield takeLatest(actions.submitEditorForm.type, submitFormSaga);
 }
 
-function* simulateUnauthSaga(): Generator<unknown, void, string> {
-  const state = yield select();
-  // eslint-disable-next-line
-  console.log(state);
+function* simulateUnauthSaga(): Generator<unknown, void, State> {
+  const state: State = yield select();
+  window.location.href = state.config.loginEndpoint;
 }
 
 export function* SimulateUnauthSaga(): Generator {
