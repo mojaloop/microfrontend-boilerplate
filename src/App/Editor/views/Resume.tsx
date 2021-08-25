@@ -1,11 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { Field, Text } from 'components';
-import { State } from 'store';
 import './Resume.scss';
+import editorConnector, { EditorProps } from '../connectors';
 
-export default function Resume() {
-  const { name, lastname, address } = useSelector((state: State) => state.editor);
+function Resume({ name, lastname, address }: EditorProps) {
   return (
     <div>
       <Field className="resume__field" size="small" kind="dark">
@@ -32,3 +30,5 @@ export default function Resume() {
     </div>
   );
 }
+
+export default editorConnector(Resume);

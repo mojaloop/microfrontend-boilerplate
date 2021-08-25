@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import configureStore from './store';
+import configureStore, { ReduxContext } from './store';
 import App from './App';
 import { actions, AuthConfig } from './App/Config';
 
@@ -48,7 +48,7 @@ export default function ExportApp({ token, authConfig, pubSub }: ExportAppProps)
   }, 1000);
 
   return (
-    <Provider store={store}>
+    <Provider store={store} context={ReduxContext}>
       <App token={token} />
     </Provider>
   );

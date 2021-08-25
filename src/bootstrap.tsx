@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider, ReactReduxContext } from 'react-redux';
+import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
 import { Layout } from 'components';
 import { ConnectedRouter } from 'connected-react-router';
-import configureStore from './store';
+import configureStore, { ReduxContext } from './store';
 import App from './App';
 import { AppMenu } from './Menu';
 
@@ -14,8 +14,8 @@ const store = configureStore(history, {
 });
 
 const ConnectedApp = () => (
-  <Provider store={store}>
-    <ConnectedRouter history={history} context={ReactReduxContext}>
+  <Provider store={store} context={ReduxContext}>
+    <ConnectedRouter history={history} context={ReduxContext}>
       <Layout>
         <Layout.Content>
           <Layout.SideMenu>

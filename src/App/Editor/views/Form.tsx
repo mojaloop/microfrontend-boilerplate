@@ -1,23 +1,21 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Button, Icon, Row, TextField } from 'components';
 // @ts-ignore
 import WarnIcon from 'bootstrap-icons/icons/exclamation-diamond-fill.svg';
-import { State } from 'store';
-import { actions } from '../slice';
 import './Form.scss';
+import editorConnector, { EditorProps } from '../connectors';
 
-interface FormProps {
-  token?: string;
-}
-function NameForm({ token = '' }: FormProps) {
-  const dispatch = useDispatch();
-
-  const editor = useSelector((state: State) => state.editor);
-  const counter = useSelector((state: State) => state.config.counter);
-
-  const { name, lastname, address, formSubmit } = editor;
-
+function Form({
+  name,
+  lastname,
+  address,
+  formSubmit,
+  onChangeEditorName,
+  onChangeEditorLastname,
+  onChangeEditorAddress,
+  onSubmitEditorForm,
+  onSimulateUnauthenticatedRequest,
+}: EditorProps) {
   return (
     <Row align="center left">
       <div style={{ margin: '5px' }}>
@@ -27,32 +25,31 @@ function NameForm({ token = '' }: FormProps) {
           fill={getComputedStyle(document.documentElement).getPropertyValue('--color__primary')}
         />
       </div>
-      <div>counter: {counter} </div>
       <TextField
         className="form__field"
         size="small"
         value={name}
         placeholder="Name"
-        onChange={(value: string) => dispatch(actions.changeEditorName(value))}
+        onChange={onChangeEditorName}
       />
       <TextField
         className="form__field"
         size="small"
         value={lastname}
         placeholder="Lastname"
-        onChange={(value: string) => dispatch(actions.changeEditorLastname(value))}
+        onChange={onChangeEditorLastname}
       />
       <TextField
         className="form__field"
         size="small"
         value={address}
         placeholder="Address"
-        onChange={(value: string) => dispatch(actions.changeEditorAddress(value))}
+        onChange={onChangeEditorAddress}
       />
       <Button
         label="Submit Form"
         size="small"
-        onClick={() => dispatch(actions.submitEditorForm(token))}
+        onClick={onSubmitEditorForm}
         disabled={formSubmit.pending}
         pending={formSubmit.pending}
       />
@@ -60,10 +57,10 @@ function NameForm({ token = '' }: FormProps) {
         label="Simluate unauthenticated request"
         size="small"
         kind="danger"
-        onClick={() => dispatch(actions.simulateUnauthenticatedRequest())}
+        onClick={onSimulateUnauthenticatedRequest}
       />
     </Row>
   );
 }
 
-export default NameForm;
+export default editorConnector(Form);
