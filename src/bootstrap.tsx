@@ -22,7 +22,6 @@ const ConnectedApp = () => (
             <AppMenu />
           </Layout.SideMenu>
           <Layout.Page>
-            Test
             <App />
           </Layout.Page>
         </Layout.Content>
