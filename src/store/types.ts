@@ -1,11 +1,7 @@
 import { Dispatch as ReduxDispatch } from 'redux';
-import { RouterState } from 'connected-react-router';
-import { EditorState } from 'App/Editor/types';
+import getCreateReducer from './createReducer';
 
-export interface State {
-  router: RouterState;
-  editor: EditorState;
-}
-export type PartialState = Partial<State>;
+const rootReducer = getCreateReducer()();
 
+export type State = ReturnType<typeof rootReducer>;
 export type Dispatch = ReduxDispatch;

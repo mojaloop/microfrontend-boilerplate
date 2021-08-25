@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Field, Text } from 'components';
-import { State } from 'store/types';
+import { State } from 'store';
 import './Resume.scss';
 
 export default function Resume() {

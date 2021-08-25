@@ -1,6 +1,7 @@
-import api from 'utils/api';
 import { PayloadAction } from '@reduxjs/toolkit';
-import { all, call, put, takeLatest } from 'redux-saga/effects';
+import { all, call, put, takeLatest, select } from 'redux-saga/effects';
+import api from 'utils/api';
+import { State } from 'store';
 import { actions } from './slice';
 
 function* submitFormSaga(
@@ -20,6 +21,15 @@ export function* SubmitFormSaga(): Generator {
   yield takeLatest(actions.submitEditorForm.type, submitFormSaga);
 }
 
+function* simulateUnauthSaga(): Generator<unknown, void, State> {
+  const state: State = yield select();
+  window.location.href = state.config.loginEndpoint;
+}
+
+export function* SimulateUnauthSaga(): Generator {
+  yield takeLatest(actions.simulateUnauthenticatedRequest.type, simulateUnauthSaga);
+}
+
 export default function* rootSaga(): Generator {
-  yield all([SubmitFormSaga()]);
+  yield all([SubmitFormSaga(), SimulateUnauthSaga()]);
 }

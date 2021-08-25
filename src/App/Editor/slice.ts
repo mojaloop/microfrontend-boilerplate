@@ -13,6 +13,9 @@ const slice = createSlice({
   name: 'Sagas',
   initialState,
   reducers: {
+    simulateUnauthenticatedRequest(state: EditorState) {
+      return state;
+    },
     changeEditorName(state: EditorState, action: PayloadAction<string>) {
       return {
         ...state,
