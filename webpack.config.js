@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
+const { parsed: config } = require('dotenv').config();
 
 const { ModuleFederationPlugin } = webpack.container;
 
@@ -31,13 +32,13 @@ module.exports = {
     injectClient: false,
     historyApiFallback: true, // React Router
     contentBase: path.join(__dirname, 'dist'),
-    port: 3002,
+    port: config.DEV_PORT,
     host: '0.0.0.0',
     publicPath: '/',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: 'http://localhost:3002/', // Where it's going to be expected to be published for being externally loaded
+    publicPath: config.PUBLIC_PATH, // Where it's going to be expected to be published for being externally loaded
   },
   resolve: {
     alias: {
