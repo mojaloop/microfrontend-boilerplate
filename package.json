@@ -1,6 +1,6 @@
 {
   "name": "microfrontend-boilerplate",
-  "version": "1.1.15",
+  "version": "1.1.16",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,7 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.9.1",
     "@babel/preset-typescript": "^7.10.4",
-    "@modusbox/react-components": "^0.1.2-16",
+    "@modusbox/react-components": "^0.1.3",
     "@modusbox/redux-utils": "^0.0.9",
     "@reduxjs/toolkit": "^1.4.0",
     "@svgr/webpack": "^5.5.0",
