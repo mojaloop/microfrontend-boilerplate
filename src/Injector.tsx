@@ -14,7 +14,6 @@ type PubSub = {
 };
 
 interface ExportAppProps {
-  token?: string;
   authConfig?: AuthConfig;
   pubSub: PubSub;
 }
@@ -23,7 +22,7 @@ const store = configureStore(null, {
   isDevelopment: process.env.NODE_ENV === 'development',
 });
 
-export default function ExportApp({ token, authConfig, pubSub }: ExportAppProps) {
+export default function ExportApp({ authConfig, pubSub }: ExportAppProps) {
   if (authConfig) {
     store.dispatch(actions.setConfig(authConfig));
   }
@@ -49,7 +48,7 @@ export default function ExportApp({ token, authConfig, pubSub }: ExportAppProps)
 
   return (
     <Provider store={store} context={ReduxContext}>
-      <App token={token} />
+      <App />
     </Provider>
   );
 }

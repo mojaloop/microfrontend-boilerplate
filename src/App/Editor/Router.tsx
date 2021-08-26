@@ -6,14 +6,13 @@ import Resume from './views/Resume';
 
 interface EditorProps {
   basePath?: string;
-  token?: string;
 }
 
-function Editor({ token, basePath = '' }: EditorProps) {
+function Editor({ basePath = '' }: EditorProps) {
   return (
     <Switch>
       <Route path={`${basePath}/form`}>
-        <Form token={token} />
+        <Form />
       </Route>
       <Route path={`${basePath}/resume`} component={Resume} />
       <Route path={`${basePath}/data`}>
