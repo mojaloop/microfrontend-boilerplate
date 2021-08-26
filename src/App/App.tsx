@@ -50,11 +50,7 @@ function Navigator({ pathname, basePath, onTabClick }: TabProps) {
   );
 }
 
-interface AppProps {
-  token?: string;
-}
-
-function App({ token = '' }: AppProps) {
+function App() {
   const history = useHistory();
   const { pathname } = useLocation();
   const basePath = useBasePath();
@@ -63,7 +59,7 @@ function App({ token = '' }: AppProps) {
     <>
       <Welcome basePath={basePath} />
       <Navigator onTabClick={history.push} basePath={basePath} pathname={pathname} />
-      <Editor basePath={basePath} token={token} />
+      <Editor basePath={basePath} />
     </>
   );
 }

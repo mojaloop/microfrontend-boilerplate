@@ -1,10 +1,8 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { MessageBox } from 'components';
-import { State } from 'store';
+import editorConnector, { EditorProps } from '../connectors';
 
-export default function Data() {
-  const { formSubmit } = useSelector((state: State) => state.editor);
+function Data({ formSubmit }: EditorProps) {
   if (formSubmit.data) {
     return <div>{JSON.stringify(formSubmit.data)}</div>;
   }
@@ -13,3 +11,5 @@ export default function Data() {
   }
   return <MessageBox>Nothing to display! Did you submit?</MessageBox>;
 }
+
+export default editorConnector(Data);
