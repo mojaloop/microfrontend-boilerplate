@@ -2,7 +2,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
-const { parsed: config } = require('dotenv').config();
+
+const { DEV_PORT, PUBLIC_PATH } = process.env;
+const { parsed } = require('dotenv').config({
+  path: './.env',
+});
+
+const config = {
+  DEV_PORT: DEV_PORT || parsed.DEV_PORT,
+  PUBLIC_PATH: PUBLIC_PATH || parsed.PUBLIC_PATH,
+}
 
 const { ModuleFederationPlugin } = webpack.container;
 

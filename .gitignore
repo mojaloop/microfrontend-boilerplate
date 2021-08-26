@@ -1,14 +1,23 @@
+## config
 config/local
+
+## dist files
 dist/assets/
 dist/bundle.js
 dist/*
 dev/*
 styleguide
+
+## Env files
+.env.local
+
+## modules
 node_modules
 npm-debug.log
 .DS_Store
 .tern-port
 .idea
+
 .editor-config
 package-lock.json
 yarn-error.log
