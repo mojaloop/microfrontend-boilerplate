@@ -1,0 +1,12 @@
+// This section refers to the react-components override
+@use '@modusbox/react-components/lib/index' with (
+  $primary: rgb(245, 102, 7),
+  $border-color--default: #ccc,
+  $border-width--default: 1px,
+  $border-width--themed: 1px,
+  // flags
+  $themed-border-top: true,
+  $themed-border-bottom: true,
+  $themed-border-left: true,
+  $themed-border-right: true,
+);
