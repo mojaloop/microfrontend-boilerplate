@@ -56,7 +56,7 @@ function App() {
   const basePath = useBasePath();
 
   return (
-    <div className="app">
+    <div className="second-app">
       <Welcome basePath={basePath} />
       <Navigator onTabClick={history.push} basePath={basePath} pathname={pathname} />
       <Editor basePath={basePath} />
