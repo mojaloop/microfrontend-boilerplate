@@ -12,7 +12,7 @@ interface WelcomeProps {
 function Welcome({ basePath }: WelcomeProps) {
   return (
     <div style={{ padding: '10px' }}>
-      <Heading size="4">Welcome!</Heading>
+      <Heading size="4">Welcome to Application 2!</Heading>
       <Text>
         App is mounted on <code>{basePath || '/'}</code> and will automatically redirect to{' '}
         <code>{basePath}/form</code>
