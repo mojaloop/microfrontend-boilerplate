@@ -127,7 +127,7 @@ module.exports = {
       filename: 'app.js',
       exposes: {
         './App': './src/Injector',
-        './Menu2': './src/Menu',
+        './Menu': './src/Menu',
       },
       shared: [
         'react',
