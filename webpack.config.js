@@ -122,11 +122,11 @@ module.exports = {
       },
     }),
     new ModuleFederationPlugin({
-      name: 'app2',
-      library: { type: 'var', name: 'app2' },
-      filename: 'app2.js',
+      name: 'app',
+      library: { type: 'var', name: 'app' },
+      filename: 'app.js',
       exposes: {
-        './App2': './src/Injector',
+        './App': './src/Injector',
         './Menu2': './src/Menu',
       },
       shared: [
