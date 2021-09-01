@@ -1232,10 +1232,10 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
-"@modusbox/react-components@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@modusbox/react-components/-/react-components-0.1.3.tgz#adf48d988cd1af4db5a34728751b8d66bce00dd4"
-  integrity sha512-gjzSFyKgZterg1flDWAwOQBVeaumaoNiQxZDBl3vqyFecvfHLBgizcg9XxH9/WeGWMaujkh3O3Hhy03aTVqZbw==
+"@modusbox/react-components@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@modusbox/react-components/-/react-components-0.1.4.tgz#df9e52b22465ba7aef1499298bd9838a30c0baec"
+  integrity sha512-H6fVpEznnUlu2sJ++gGY874TbkzL/EkAYQ3V1xOPY0KSMJ8iUHfCoASzBKPygrH9lhjwTBA91Es1+gn+dNkhJQ==
   dependencies:
     "@modusbox/ts-utils" "^0.0.4"
     babel-plugin-react-docgen "^4.2.1"
@@ -1266,6 +1266,13 @@
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@modusbox/ts-utils/-/ts-utils-0.0.4.tgz#3f60f61066576cc07dff35adfc5a754d9cdc63f6"
   integrity sha512-bC6MZ1Do0w0bJyy1A/g9/beJplunWbuGvtthd2Y69JlI0xM4ObihA6/VcVzdJfV/f0rsLz5lh7BXJS/FXojGUg==
+  dependencies:
+    lodash "^4.17.21"
+
+"@modusbox/ts-utils@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@modusbox/ts-utils/-/ts-utils-0.0.5.tgz#bd59f0c8faf325bd31c394c1d855254a4edb40b2"
+  integrity sha512-HvJAWTTxpso6BatFceLGsfKXBY6iSJotnzyBjUbnn6J/iCyVSrkexJ0BTiSWdpD+JiXDL9hmZuDr0dhaA+o2wQ==
   dependencies:
     lodash "^4.17.21"
 
