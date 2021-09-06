@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import configureStore, { ReduxContext } from './store';
+import { store, ReduxContext } from './store';
 import App from './App';
 import { actions, AuthConfig } from './App/Config';
 
@@ -18,23 +18,19 @@ interface ExportAppProps {
   pubSub: PubSub;
 }
 
-const store = configureStore(null, {
-  isDevelopment: process.env.NODE_ENV === 'development',
-});
-
 export default function ExportApp({ authConfig, pubSub }: ExportAppProps) {
   if (authConfig) {
     store.dispatch(actions.setConfig(authConfig));
   }
 
   const unsubChannelA0 = pubSub.subscribe('channel-A', () => {
-    store.dispatch(actions.increaseCounter());
+    // store.dispatch(actions.increaseCounter());
   });
   const unsubChannelA1 = pubSub.subscribe('channel-A', () => {
-    store.dispatch(actions.increaseCounter());
+    // store.dispatch(actions.increaseCounter());
   });
   const unsubChannelB0 = pubSub.subscribe('channel-B', () => {
-    store.dispatch(actions.increaseCounter());
+    // store.dispatch(actions.increaseCounter());
   });
 
   setTimeout(() => {
@@ -51,4 +47,15 @@ export default function ExportApp({ authConfig, pubSub }: ExportAppProps) {
       <App />
     </Provider>
   );
+}
+
+if (process.env.NODE_ENV !== 'development') {
+  // eslint-disable-next-line
+  console.info('Name', process.env.REACT_APP_NAME);
+
+  // eslint-disable-next-line
+  console.info('Version', process.env.REACT_APP_VERSION);
+
+  // eslint-disable-next-line
+  console.info('Commit', process.env.REACT_APP_COMMIT);
 }

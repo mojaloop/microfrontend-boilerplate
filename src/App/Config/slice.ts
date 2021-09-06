@@ -2,11 +2,9 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ConfigState, AuthConfig } from './types';
 
 export const initialState: ConfigState = {
-  tokenEndpoint: '',
   loginEndpoint: '',
   logoutEndpoint: '',
   isAuthEnabled: true,
-  counter: 0,
 };
 
 const slice = createSlice({
@@ -17,12 +15,6 @@ const slice = createSlice({
       return {
         ...state,
         ...action.payload,
-      };
-    },
-    increaseCounter(state: ConfigState) {
-      return {
-        ...state,
-        counter: state.counter + 1,
       };
     },
   },

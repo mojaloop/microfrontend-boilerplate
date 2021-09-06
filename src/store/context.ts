@@ -1,4 +1,9 @@
 import React, { Context } from 'react';
-import { ReactReduxContextValue } from 'react-redux';
+import { createSelectorHook, createStoreHook, ReactReduxContextValue } from 'react-redux';
 
-export default React.createContext(null) as unknown as Context<ReactReduxContextValue>;
+const ReduxContext = React.createContext(null) as unknown as Context<ReactReduxContextValue>;
+
+export default ReduxContext;
+
+export const useStore = createStoreHook(ReduxContext);
+export const useSelector = createSelectorHook(ReduxContext);
