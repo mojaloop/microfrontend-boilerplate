@@ -17,7 +17,7 @@ This project follows [JAMStack](https://jamstack.org/) architecture and attempts
 
 ## Prerequisites
 
-It requires `node v12` to run, please make sure to have the correct version installed.
+It requires `node v16` to run, please make sure to have the correct version installed.
 
 You can check your node version with `node --version`.
 
