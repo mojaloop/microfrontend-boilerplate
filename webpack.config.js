@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const EslintWebpackPlugin = require('eslint-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const webpack = require('webpack');
 const DotenvPlugin = require('dotenv-webpack');
@@ -62,12 +63,6 @@ module.exports = {
   module: {
     rules: [
       {
-        enforce: 'pre',
-        test: /\.(ts|js)x?$/,
-        use: 'eslint-loader',
-        exclude: [/node_modules/],
-      },
-      {
         test: /\.(ts|js)x?$/,
         exclude: [/node_modules/],
         use: [
@@ -114,6 +109,10 @@ module.exports = {
     ],
   },
   plugins: [
+    new EslintWebpackPlugin({
+      extensions: ['ts', 'js', 'tsx', 'jsx'],
+      exclude: [`/node_modules/`],
+    }),
     new DotenvPlugin({
       systemvars: true,
     }),
