@@ -1,8 +1,8 @@
-![Build Status](https://github.com/modusintegration/microfrontend-shell-boilerplate/actions/workflows/node.js.yml/badge.svg)
+![Build Status](https://github.com/modusintegration/microfrontend-boilerplate/actions/workflows/node.js.yml/badge.svg)
 
-# Microfrontend Shell Boilerplate
+# Microfrontend Boilerplate
 
-This is the Shell application boilerplate project to create microfrontends.
+This is the application boilerplate project to create microfrontends.
 
 It's built in React / Redux / Typescript and it includes some other libraries.
 
