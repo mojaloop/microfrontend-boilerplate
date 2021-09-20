@@ -28,6 +28,7 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.9.1",
     "@babel/preset-typescript": "^7.10.4",
+    "@modusbox/microfrontend-utils": "^0.0.3",
     "@modusbox/react-components": "^0.1.4",
     "@modusbox/redux-utils": "^0.0.9",
     "@modusbox/ts-utils": "^0.0.5",

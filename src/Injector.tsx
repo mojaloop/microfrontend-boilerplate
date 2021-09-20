@@ -1,17 +1,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { PubSub, AuthConfig } from '@modusbox/microfrontend-utils';
 import { store, ReduxContext } from './store';
 import App from './App';
-import { actions, AuthConfig } from './App/Config';
-
-type Callback = (message: string) => void;
-
-type Unsubscribe = () => void;
-
-type PubSub = {
-  subscribe: (channel: string, callback: Callback) => Unsubscribe;
-  dispatch: (channel: string, message: string) => void;
-};
+import { actions } from './App/Config';
 
 interface ExportAppProps {
   authConfig?: AuthConfig;
